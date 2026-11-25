@@ -5,7 +5,7 @@ export const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiO
 
 // Kunci publik VAPID untuk notifikasi push (pasangannya, kunci privat, hanya ada di secret Edge Function).
 // Dibuat dengan `npx web-push generate-vapid-keys`. Kosong = fitur notifikasi disembunyikan.
-export const VAPID_PUBLIC_KEY = "";
+export const VAPID_PUBLIC_KEY = "BNqFssh3NDT6uG32AsgcJmv9QmLY0_ul6mrcbIFSllaD2NAYQantjWnwsTdEyXWoiKJKylvHlVUqhOjReoxcUNo";
 
 export function isConfigured() {
   return SUPABASE_URL.startsWith("https://") && SUPABASE_ANON_KEY.length > 20;
