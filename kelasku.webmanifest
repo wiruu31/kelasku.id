@@ -1,0 +1,17 @@
+{
+  "name": "Kelasku.id",
+  "short_name": "Kelasku.id",
+  "description": "Mading, jadwal, tugas, dan pengelolaan kelas dalam satu tempat.",
+  "lang": "id",
+  "start_url": "./kelasku.html#/mading",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7efe6",
+  "theme_color": "#f7efe6",
+  "icons": [
+    { "src": "icons/ikon-kelasku-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/ikon-kelasku-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/ikon-kelasku-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

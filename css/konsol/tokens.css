@@ -1,0 +1,45 @@
+/* Bara: gelap hangat untuk Konsol Main Admin. Aksen tunggal oranye bara. */
+:root {
+  color-scheme: dark;
+  --bg: #121110;
+  --surface: #1a1816;
+  --surface-2: #221f1c;
+  --line: #2e2a26;
+  --line-strong: #766d64;
+  --text: #ede8e1;
+  --muted: #9a9189;
+  --ember: #ff7a45;
+  --ember-ink: #1a0d06;
+  --ember-soft: rgba(255, 122, 69, 0.14);
+  --ok: #8fd3a8;
+  --danger: #ff5d5d;
+  --danger-soft: rgba(255, 93, 93, 0.14);
+
+  --font-ui: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.25rem;
+
+  --rail: 13rem;
+  --topbar: 3.25rem;
+  --gutter: 1rem;
+  --page-max: 72rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.9375rem;
+  --text-xl: clamp(1.375rem, 1.1rem + 1.1vw, 1.875rem);
+}
+
+@media (min-width: 900px) {
+  :root { --gutter: 2rem; }
+}

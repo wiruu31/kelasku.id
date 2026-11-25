@@ -1,0 +1,45 @@
+/* Senja Kelas: krem hangat, tinta aubergine, satu aksen terakota, biru malam sebagai penopang. */
+:root {
+  --paper: #f7efe6;
+  --paper-deep: #efe3d4;
+  --card: #fffaf3;
+  --ink: #2a1d2b;
+  --ink-soft: #5e4f58;
+  --line: #dccdbb;
+  --line-strong: #8c7a6c;
+  --accent: #b8431f;
+  --accent-deep: #983517;
+  --accent-tint: #fbe3d6;
+  --night: #2f3a5c;
+  --night-soft: #3d4a73;
+  --sun: #f6e2b8;
+  --danger: #a3241c;
+  --danger-tint: #fbe4e1;
+  --ok: #2e6a4a;
+  --ok-tint: #e3f0e6;
+
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: clamp(1.125rem, 1.05rem + 0.4vw, 1.3125rem);
+  --step-2: clamp(1.5rem, 1.25rem + 1.2vw, 2rem);
+  --step-3: clamp(1.875rem, 1.4rem + 2.2vw, 2.75rem);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius-card: 18px;
+  --radius-ctl: 12px;
+  --shadow-float: 0 10px 30px -12px rgba(42, 29, 43, 0.35);
+  --tap: 44px;
+  --nav-h: 64px;
+  --rail-w: 248px;
+  --content-max: 1040px;
+}

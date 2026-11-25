@@ -1,0 +1,34 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  /* Cahaya bara tipis di pojok, satu-satunya dekorasi latar. */
+  background-image: radial-gradient(60rem 30rem at 100% -10%, rgba(255, 122, 69, 0.07), transparent 60%);
+  background-repeat: no-repeat;
+  color: var(--text);
+  font: 400 var(--text-md) / 1.5 var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+h1 { font-size: var(--text-xl); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+h2 { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.01em; }
+h3 { font-size: var(--text-md); font-weight: 600; }
+a { color: var(--ember); text-underline-offset: 3px; }
+code, .mono { font-family: var(--font-mono); font-size: 0.9em; }
+img, svg { max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button, summary, select, label.check, [role="button"] { cursor: pointer; }
+button:disabled, select:disabled, input:disabled { cursor: not-allowed; opacity: 0.55; }
+
+:focus-visible { outline: 2px solid var(--ember); outline-offset: 2px; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: var(--space-3); top: -4rem; z-index: 100; padding: var(--space-2) var(--space-3); background: var(--ember); color: var(--ember-ink); border-radius: var(--r-sm); font-weight: 600; }
+.skip-link:focus { top: var(--space-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
