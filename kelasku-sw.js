@@ -1,11 +1,10 @@
 // Service worker bersama Kelasku.id dan Admin Kelasku.id (satu origin, satu cakupan). Naikkan VERSION setiap rilis supaya cache lama dibuang.
-const VERSION = "kelasku-v1.0.0";
+const VERSION = "kelasku-v1.0.1";
 const SHELL = VERSION + "-shell";
 const RUNTIME = VERSION + "-runtime";
 
 // Daftar berkas kedua aplikasi. node tests/check-precache.mjs --write mengisinya; tanpa flag memeriksa.
 const PRECACHE = [
-  "./",
   "css/base.css",
   "css/components.css",
   "css/konsol/base.css",

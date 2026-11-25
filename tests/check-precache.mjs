@@ -31,7 +31,8 @@ for (const app of APPS) {
   for (const f of readdirSync(join(root, app.cssDir))) if (f.endsWith(".css")) files.add(`${app.cssDir}/${f}`);
   for (const f of readdirSync(join(root, "icons"))) if (app.iconPrefixes.some((p) => f.startsWith(p))) files.add(`icons/${f}`);
 }
-const list = ["./", ...[...files].sort()];
+// "./" sengaja tidak dimasukkan: di hosting tanpa index.html alamat akar 404 dan menggagalkan seluruh pemasangan service worker.
+const list = [...[...files].sort()];
 const path = join(root, SW);
 const src = readFileSync(path, "utf8");
 
@@ -42,7 +43,7 @@ if (write) {
 } else {
   const listed = new Set([...src.matchAll(/^\s+"([^"]+)"/gm)].map((m) => m[1]));
   const missing = list.filter((f) => !listed.has(f));
-  const ghost = [...listed].filter((f) => f !== "./" && !existsSync(join(root, f)));
+  const ghost = [...listed].filter((f) => !existsSync(join(root, f)));
   if (missing.length || ghost.length) {
     if (missing.length) console.error(`Belum ada di PRECACHE:\n  ${missing.join("\n  ")}`);
     if (ghost.length) console.error(`Berkas tidak ditemukan:\n  ${ghost.join("\n  ")}`);

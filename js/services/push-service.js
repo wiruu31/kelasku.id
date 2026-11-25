@@ -33,9 +33,12 @@ export function blocker() {
   return null;
 }
 
+// serviceWorker.ready bisa menggantung bila worker belum aktif; tanpa batas waktu, keluar dari akun ikut macet.
+const withTimeout = (promise, ms) => Promise.race([promise, new Promise((resolve) => setTimeout(() => resolve(null), ms))]);
+
 async function currentSubscription() {
-  const reg = await navigator.serviceWorker.ready;
-  return reg.pushManager.getSubscription();
+  const reg = await withTimeout(navigator.serviceWorker.ready, 3000);
+  return reg ? reg.pushManager.getSubscription() : null;
 }
 
 export async function isSubscribed() {
@@ -69,7 +72,8 @@ export async function enablePush() {
   if (why) throw new AppError("notif_tidak_didukung", "Perangkat ini belum bisa menerima notifikasi.");
   const result = await Notification.requestPermission();
   if (result !== "granted") throw new AppError("notif_ditolak", "Izin notifikasi tidak diberikan.");
-  const reg = await navigator.serviceWorker.ready;
+  const reg = await withTimeout(navigator.serviceWorker.ready, 5000);
+  if (!reg) throw new AppError("notif_tidak_siap", "Aplikasi belum siap menerima notifikasi. Muat ulang halaman, lalu coba lagi.");
   const sub =
     (await reg.pushManager.getSubscription()) ??
     (await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: keyToBytes(VAPID_PUBLIC_KEY) }));
